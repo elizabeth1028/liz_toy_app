@@ -1,4 +1,5 @@
 const { contextBridge, ipcRenderer } = require('electron')
+const config = require('./config.json')
 
 // Overlap?
 /*
@@ -8,6 +9,10 @@ contextBridge.exposeInMainWorld('api', {
   addMasterPassword: () => ipcRenderer.invoke('add-master-password')
 })
 */
+
+contextBridge.exposeInMainWorld('api', {
+    flaskUrl: config.FLASK_BASE_URL // NOT hard coding it
+  });
 
 // Works! send('test') button
 const ipcHandler = {
