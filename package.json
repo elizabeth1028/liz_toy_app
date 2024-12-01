@@ -2,7 +2,7 @@
   "name": "sprint-final",
   "version": "1.0.0",
   "description": "Password manager final sprint",
-  "main": "./out/main.js",
+  "main": "./main/main.js",
   "scripts": {
     "start:electron": "electron .",
     "start:forge": "electron-forge start",
